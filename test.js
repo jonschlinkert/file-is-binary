@@ -34,4 +34,15 @@ describe('file-is-binary', function() {
     var file = new File({path: fp, contents: fs.readFileSync(fp)});
     assert(!isBinary(file));
   });
+
+  it('should work for non-vinyl files', function() {
+    var txt = path.join(__dirname, 'fixtures/foo.txt');
+    var gif = path.join(__dirname, 'fixtures/demo.gif');
+
+    var foo = {path: txt, contents: fs.readFileSync(txt)};
+    var bar = {path: gif, contents: fs.readFileSync(gif)};
+
+    assert(!isBinary(foo));
+    assert(isBinary(bar));
+  });
 });
