@@ -4,8 +4,8 @@ var isObject = require('isobject');
 var isBinary = require('isbinaryfile');
 
 module.exports = function(file) {
-  if (!isObject(file) || !file._isVinyl) {
-    throw new Error('expected file to be an instance of vinyl');
+  if (!isObject(file)) {
+    throw new Error('expected file to be an object');
   }
 
   if (file.hasOwnProperty('_isBinary')) {

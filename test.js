@@ -18,7 +18,7 @@ describe('file-is-binary', function() {
       cb(new Error('expected an error'));
     } catch (err) {
       assert(err);
-      assert.equal(err.message, 'expected file to be an instance of vinyl');
+      assert.equal(err.message, 'expected file to be an object');
       cb();
     }
   });
