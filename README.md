@@ -27,6 +27,12 @@ console.log(isBinary(file));
 
 ## About
 
+### Related projects
+
+* [file-contents](https://www.npmjs.com/package/file-contents): Set the `contents` property on a file object. Abstraction from vinyl-fs to support stream or… [more](https://github.com/jonschlinkert/file-contents) | [homepage](https://github.com/jonschlinkert/file-contents "Set the `contents` property on a file object. Abstraction from vinyl-fs to support stream or non-stream usage.")
+* [file-stat](https://www.npmjs.com/package/file-stat): Set the `stat` property on a file object. Abstraction from vinyl-fs to support stream or… [more](https://github.com/jonschlinkert/file-stat) | [homepage](https://github.com/jonschlinkert/file-stat "Set the `stat` property on a file object. Abstraction from vinyl-fs to support stream or non-stream usage.")
+* [gulp-is-binary](https://www.npmjs.com/package/gulp-is-binary): Adds an `.isBinary()` function to the `file` object, similar to `file.isNull()` and `file.isStream()`. | [homepage](https://github.com/jonschlinkert/gulp-is-binary "Adds an `.isBinary()` function to the `file` object, similar to `file.isNull()` and `file.isStream()`.")
+
 ### Contributing
 
 Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](../../issues/new).

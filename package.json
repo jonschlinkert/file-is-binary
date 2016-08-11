@@ -44,15 +44,19 @@
     "plugins": [
       "gulp-format-md"
     ],
-    "lint": {
-      "reflinks": true
-    },
     "related": {
-      "list": []
+      "list": [
+        "gulp-is-binary",
+        "file-contents",
+        "file-stat"
+      ]
     },
     "reflinks": [
       "verb",
       "verb-generate-readme"
-    ]
+    ],
+    "lint": {
+      "reflinks": true
+    }
   }
 }
