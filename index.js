@@ -13,6 +13,11 @@ module.exports = function(file) {
     return file._isBinary;
   }
 
+  if (isObject(file.contents) && typeof file.pipe === 'function') {
+    file._isBinary = false;
+    return false;
+  }
+
   if (isNull(file) || isDirectory(file)) {
     file._isBinary = false;
     return false;
