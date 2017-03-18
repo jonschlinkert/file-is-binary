@@ -1,6 +1,5 @@
 'use strict';
 
-var stat = require('file-stat');
 var isObject = require('isobject');
 var isBinary = require('isbinaryfile');
 
@@ -13,12 +12,17 @@ module.exports = function(file) {
     return file._isBinary;
   }
 
-  if (isObject(file.contents) && typeof file.pipe === 'function') {
+  if (typeof file.isStream === 'function' && file.isStream()) {
     file._isBinary = false;
     return false;
   }
 
-  if (isNull(file) || isDirectory(file)) {
+  if (typeof file.isNull === 'function' && file.isNull()) {
+    file._isBinary = false;
+    return false;
+  }
+
+  if (typeof file.isDirectory === 'function' && file.isDirectory()) {
     file._isBinary = false;
     return false;
   }
@@ -28,21 +32,3 @@ module.exports = function(file) {
   return file._isBinary;
 };
 
-function isNull(file) {
-  if (typeof file.isNull !== 'function') {
-    file.isNull = function() {
-      return file.contents === null;
-    };
-  }
-  return file.isNull();
-}
-
-function isDirectory(file) {
-  if (typeof file.stat === 'undefined') {
-    stat.statSync(file);
-    file.isDirectory = function() {
-      return file.stat && file.stat.isDirectory();
-    }
-  }
-  return file.isDirectory();
-}
