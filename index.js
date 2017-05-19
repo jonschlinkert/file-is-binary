@@ -1,7 +1,7 @@
 'use strict';
 
 var isObject = require('isobject');
-var isBinary = require('isbinaryfile');
+var isBinary = require('is-binary-buffer');
 
 module.exports = function(file) {
   if (!isObject(file)) {
@@ -27,8 +27,7 @@ module.exports = function(file) {
     return false;
   }
 
-  var len = file.stat ? file.stat.size : file.contents.length;
-  file._isBinary = isBinary.sync(file.contents, len);
+  file._isBinary = isBinary(file.contents);
   return file._isBinary;
 };
 

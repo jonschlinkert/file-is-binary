@@ -20,13 +20,13 @@
     "test": "mocha"
   },
   "dependencies": {
-    "isbinaryfile": "^3.0.2",
+    "is-binary-buffer": "^1.0.0",
     "isobject": "^3.0.0"
   },
   "devDependencies": {
-    "gulp-format-md": "^0.1.11",
-    "mocha": "^3.2.0",
-    "vinyl": "^2.0.1"
+    "gulp-format-md": "^0.1.12",
+    "mocha": "^3.4.1",
+    "vinyl": "^2.0.2"
   },
   "keywords": [
     "binary",
@@ -51,8 +51,6 @@
       ]
     },
     "reflinks": [
-      "verb",
-      "verb-generate-readme"
     ],
     "lint": {
       "reflinks": true
